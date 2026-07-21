@@ -1,12 +1,7 @@
 # Inheritance 
 
-class Account:
-    def __init__(self,balance):
-        self.__balance = balance
-        
-    @property
-    def balance(self):
-        return self.__balance
+from typing import Self
+
 
 class BankConfig:
     _instance = None
@@ -18,17 +13,66 @@ class BankConfig:
             cls._instance = super().__new__(cls)
         return cls._instance
     
-class SavingAccount:
+class Account:
     def __init__(self, owner, number, balance):
         self.owner = owner
         self.number = number
-        self.balance = balance
+        self.__balance = balance
+        self._observers = []
+        
+    @property
+    def balance(self):
+        return self.__balance
+    
+    def subscribe(self, obj):
+        self._observers.append(obj)
 
-class CurrentAccount:
+    def _notify(self, event):
+        for obj in self._observers:
+            obj.update(event)
+            
+    def statement(self):
+        return print(f'{self.owner}: Your balance is {self.__balance}')
+    
+    def deposit(self, amount):
+        if amount < 0:
+            raise TypeError("Invalid input")
+        self.__balance += amount
+        self._notify(self.statement())
+        
+    
+    def withdraw(self, amount):
+        if amount <= 0:
+            raise ValueError("Invalid Input")
+        elif amount > self.__balance:
+            raise ValueError("insufficient balance")
+        else:
+            self.__balance -= amount
+        self._notify(self.statement())
+
+
+class SavingAccount(Account):
+    def __init__(self, owner, number, balance, rate = 0.05):
+        super().__init__(owner, number, balance)
+        self.rate = rate
+
+    def add_interest(self):
+        interest = self.balance * self.rate
+        return self.deposit(interest)
+    
+class CurrentAccount(Account):
     def __init__(self, owner, number, balance):
-        self.owner = owner
-        self.number = number
-        self.balance = balance
+        super().__init__(owner, number, balance)
+        bank_config = BankConfig()
+        overdraft = bank_config.overdraft_limit
+        self.deposit(overdraft)
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise ValueError("Insufficient funds")
+        else:
+            self.balance -= amount # type: ignore
+            self._notify(self.statement())
 
 
 class  AccountFactory:
@@ -40,41 +84,15 @@ class  AccountFactory:
             return CurrentAccount(owner, number, balance)
         raise ValueError(f'type Unknown: {kind}')
 
-class Withdraw():
-    def __init__(self, balance):
-        self.balance = balance
-   
-    def withdraw(self, amount):
-        bankConfig = BankConfig()
-        if amount > self.balance + bankConfig.overdraft_limit:
-            return "Insufficient funds"
-        else:
-            new_balance = self.balance - amount
-            return f"Withdrawal successful. Your new balance is {new_balance}"
-
-class Deposit():
-    def __init__(self, balance):
-        self.balance = balance
-
-    def deposit(self, amount):
-        if amount <= 0:
-            raise ValueError("Amount can not be 0 or less")
-        else: 
-            self.balance += amount
-            return self.balance
-        
-class Notification(Withdraw, Deposit):
-    def __init__(self, alert):
-        self.alert = alert
-        self.events = []
-
-    def subscribe(self, obj):
-        self.events.append(obj)
-    
-    def notify(self, event):
-        for obj in self.events:
-            obj.update(event)
-    
 class SMSAlert:
     def update(self, event):
-        print(f'{event}')  
+        print(f'Hello {event}')  
+
+class AuditLog:
+    def update(self, event):
+        print(f'Below {event}') 
+
+first_account = AccountFactory.create("Current", "Samson", "CBE-1", 8000) # type: ignore
+first_account.subscribe(SMSAlert())
+
+first_account.withdraw(1000)
