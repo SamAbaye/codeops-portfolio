@@ -1,111 +1,47 @@
+# 1. Name the Big-O. For five short snippets (a list index, a single loop, a nested loop, a dict 
+# lookup, a binary search), write the Big-O of each as a comment and explain why. 
 
-class BankConfig:
-    _instance = None
+# Answers: - list index(O(1)), a single loop(O(n)), a nested loop(O(n^2)), a dict lookup (O(1)), a binary search(O(log n))
 
-    interest_rate = 0.05 
-    overdraft_limit = 1000 
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
-    
-class Account:
-    def __init__(self, owner, number, balance):
-        self.owner = owner
-        self.number = number
-        self.__balance = balance
-        self._observers = []
-        
-    @property
-    def balance(self):
-        return self.__balance
-    
-    def subscribe(self, obj):
-        self._observers.append(obj)
+# 2. List vs. dict lookup. Build a list and a dict of 100,000 fake account numbers. Time how long it takes to find one near the end in each. 
 
-    def _notify(self, event):
-        for obj in self._observers:
-            obj.update(event)
-            
-    def statement(self):
-        return print(f'{self.owner}: Your balance is {self.__balance}')
-    
-    def deposit(self, amount):
-        if amount < 0:
-            raise TypeError("Invalid input")
-        self.__balance += amount
-        self._notify(self.statement())
-        
-    def withdraw(self, amount):
-        if amount <= 0:
-            raise ValueError("Invalid Input")
-        elif amount > self.__balance:
-            raise ValueError("insufficient balance")
-        else:
-            self.__balance -= amount
-        self._notify(self.statement())
+# 3. Build a stack. Write a Stack class with push, pop, and peek, and use it to reverse a list of 
+# names. 
 
-class SavingAccount(Account):
-    def __init__(self, owner, number, balance, rate = 0.05):
-        super().__init__(owner, number, balance)
-        self.rate = rate
-
-    def add_interest(self):
-        interest = self.balance * self.rate
-        return self.deposit(interest)
-    
-class CurrentAccount(Account):
-    def __init__(self, owner, number, balance):
-        super().__init__(owner, number, balance)
-        bank_config = BankConfig()
-        overdraft = bank_config.overdraft_limit
-        self.deposit(overdraft)
-    
-    def withdraw(self, amount):
-        if amount > self.balance:
-            raise ValueError("Insufficient funds")
-        else:
-            self.balance -= amount # type: ignore
-            self._notify(self.statement())
-
-class  AccountFactory:
-    @staticmethod 
-    def create(kind, owner, number, balance=0):
-        if kind == 'Savings':
-            return SavingAccount(owner, number, balance)
-        elif kind == 'Current':
-            return CurrentAccount(owner, number, balance)
-        raise ValueError(f'type Unknown: {kind}')
-
-class SMSAlert:
-    def update(self, event):
-        print(f'Hello {event}')  
-
-class AuditLog:
-    def update(self, event):
-        print(f'Below {event}') 
-
-class AccountRegistry:
-    def __init__(self):
-        self.accounts = {}
-        
-    def add(self, acc):
-        self.accounts[acc.number] = acc.owner, acc.balance
-    def find(self, number):
-        return self.accounts.get(number)
-    def list_all(self):
-        print(f"List of accounts: {self.accounts}")
-
-account = AccountRegistry()
-
-first_account = AccountFactory.create("Savings", "Samson","CBE-1", 2000)
-second_account = AccountFactory.create("Current", "Israel","CBE-2", 3000)
-
-account.add(first_account)
-account.add(second_account)
-
-account.list_all()
-print(account.find("CBE-1"))
+import collections
 
 
+num = [1,2,3,45,6]
+class Stack:
+    def __init__(self, stack):
+        self.stack = stack
+        self.updated_stack = []
+
+    def reverse(self):
+        while len(self.stack) > 0 :
+            pop = self.stack.pop()
+            push = self.updated_stack.append(pop)
+        return self.updated_stack
+
+stack = Stack(num)
+print(stack.reverse())
+
+collections.deque
+# 4. Build a queue. Use collections.deque to model a bank service line: enqueue five customers, 
+# then serve them in order. 
+
+bank_line = collections.deque()
+
+bank_line.append("Samson 1")
+bank_line.append("Samson 2")
+bank_line.append("Samson 3")
+bank_line.append("Samson 4")
+
+while bank_line:
+    current_customer = bank_line.popleft()
+    print(f'Now Serving: {current_customer}')
+print("All Customers have been served and the line is clear!")
+
+# 5. Singly linked list. Implement a Node and a LinkedList with push_front and a print_all() that 
+# walks the chain. 
 

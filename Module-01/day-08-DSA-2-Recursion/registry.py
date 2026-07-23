@@ -18,6 +18,7 @@ class Account:
         self.number = number
         self.__balance = balance
         self._observers = []
+        self.transactions = []
         
     @property
     def balance(self):
@@ -37,6 +38,7 @@ class Account:
         if amount < 0:
             raise TypeError("Invalid input")
         self.__balance += amount
+        self.transactions.append(f"Withdrew ${amount}. New Balance: ${self.balance}")
         self._notify(self.statement())
         
     def withdraw(self, amount):
@@ -46,8 +48,15 @@ class Account:
             raise ValueError("insufficient balance")
         else:
             self.__balance -= amount
+        self.transactions.append(f"Deposited ${amount}. New Balance: ${self.balance}")
         self._notify(self.statement())
 
+    def undo_last(self):
+        if not self.transactions:
+            print("No transactions to undo.")
+            return None
+        return self.transactions.pop()
+    
 class SavingAccount(Account):
     def __init__(self, owner, number, balance, rate = 0.05):
         super().__init__(owner, number, balance)
