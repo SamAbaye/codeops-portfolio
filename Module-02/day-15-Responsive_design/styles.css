@@ -1,0 +1,321 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    background-image: url("./asset/habesha_cousine.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header {
+    display: flex;
+    height: 18vh;
+    position: sticky;
+    padding: 0.5em;
+    font-size: large;
+    font-family:monospace;
+    background-color: rgba(1, 1, 1, 0.742);
+    border-bottom: 5px, solid, black;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+.logo img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+.nav-bar {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-content:space-between
+}
+.nav-bar a:hover {
+    color: gold;
+}
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.56);
+    height: 75vh;  
+}
+.hero div {
+    width: 40%;
+}
+.hero-title img{
+    width: 30%;
+    height: 1%;
+}
+h1 {
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.hero-title{
+    color: white;
+}
+button {
+    padding: 0.8em;
+    margin-right: 1em;
+    margin-top: 1em;
+    border-radius: 5px;
+    background-color: rgb(235, 201, 8);
+    border: 1px solid white;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
+.about_us {
+    display: flex;
+    justify-content:space-around;
+    padding: 2em;
+    height: 65vh;
+    background-color: rgba(245, 245, 220, 0.634);
+}
+.about_us .about_img, .about {
+    width: 50%;
+}
+
+.about_img {
+    padding: 2em;
+    justify-items:end;
+}
+.about_img img{
+    width: 75%;
+    height: 95%;
+    border-radius: 5%;
+}
+.about {
+    display: block;
+    padding: 2em;
+}
+span {
+    text-transform:uppercase;
+}
+about p {
+    text-transform: capitalize;
+}
+.part_2 {
+    display: flex;
+    height: 20vh;
+    justify-content:space-around;
+    align-items: flex-end;
+}
+
+.logo_box img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.logo_box h6{
+    text-transform:capitalize;  
+}
+.menu {
+    height: 70vh;
+}
+.menu {
+   text-align: center;
+   padding: 1em;
+}
+.menu-header {
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.services {
+}
+.btn {
+    padding: 0.3em;
+    margin: 0.5em;
+    background-color: white;
+    border: 3px solid rgba(245, 245, 220, 0.634);;
+    border-radius: 7px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+}
+.btn:hover {
+    background-color: rgb(221, 193, 38);
+}
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5em; 
+}
+.card {
+    height: 50vh;
+    width: 20vw;
+    border: 2px solid rgba(245, 197, 9, 0.163);
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+}
+.text {
+    padding: 1em;
+    width: 100%;
+}
+.text span {
+    color: rgb(255, 217, 0);
+    font-weight: bolder;
+}
+.card img {
+    width: 100%;
+    height: 10em;
+}
+form {
+    display: flex;
+    padding: 2em;
+  }
+  
+.forms {
+    height: 50vh;
+    align-items: center;
+    background-color: rgba(213, 209, 209, 0.5);
+}
+input {
+    border: 2px solid black;
+}
+footer {
+    height:30vh;
+    margin-top: 1em;
+}
+.map-address {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+.address-1 {
+    display: flex;
+}
+.phone {
+    display: flex;
+}
+.e-mail {
+    display: flex;
+}
+
+
+@media (max-width:768px){
+
+.header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+}
+.logo {
+    display: none;
+}
+.nav-bar{
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+}
+.container {
+    
+    height: auto;
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    align-items: center;
+    padding:30px 20px;
+}
+
+.hero-title h1{
+    font-size:2.2rem;
+}
+
+.hero-title button{
+    width:100%;
+    margin:5px 0;
+}
+.about_us{
+    grid-template-columns:1fr;
+    padding:30px 20px;
+}
+.about_img {
+    width: 200px;
+    height: 400px;
+}
+.part_1 h1{
+    font-size: medium;  
+}
+.part_1 p{
+    overflow: hidden;
+}
+.part_2{
+   display: none;
+}
+
+.menu{
+    padding:30px 20px;
+}
+
+.services{
+    flex-wrap:wrap;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+.card {
+    overflow: hidden;
+}
+.forms{
+    padding:30px 20px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-7{
+    grid-column:auto;
+}
+
+footer{
+    padding:30px 20px;
+}
+
+.map-address{
+    flex-direction:column;
+}
+
+iframe{
+    width:100%;
+}
+
+}
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.hero-title h1{
+    font-size:1.8rem;
+}
+
+.hero-title p{
+    font-size:15px;
+}
+
+.logo img{
+    width:80px;
+}
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+}
