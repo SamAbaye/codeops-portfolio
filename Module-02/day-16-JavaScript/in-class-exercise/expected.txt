@@ -1,0 +1,3 @@
+/*
+`The bill per person is ${per_person}, The total amount is ${total}`
+*/
