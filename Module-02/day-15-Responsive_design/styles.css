@@ -11,6 +11,7 @@
 .header {
     display: flex;
     height: 18vh;
+    width: auto;
     position: sticky;
     padding: 0.5em;
     font-size: large;
@@ -143,9 +144,12 @@ about p {
     background-color: rgb(221, 193, 38);
 }
 .cards {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1.5em; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    justify-content: space-evenly;
+    margin-top: 2em;
 }
 .card {
     height: 50vh;
@@ -168,13 +172,17 @@ about p {
     height: 10em;
 }
 form {
-    display: flex;
-    padding: 2em;
-  }
-  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-auto-rows: 65px;
+    justify-content: space-around;
+}
+form div {
+    padding: 1em;
+}
 .forms {
+    padding: 1em;
     height: 50vh;
-    align-items: center;
     background-color: rgba(213, 209, 209, 0.5);
 }
 input {
@@ -189,19 +197,10 @@ footer {
     justify-content: space-around;
     margin-top: 2em;
 }
-.address-1 {
-    display: flex;
-}
-.phone {
-    display: flex;
-}
-.e-mail {
-    display: flex;
-}
+
 
 
 @media (max-width:768px){
-
 .header{
     display: flex;
     flex-direction: column;
@@ -264,22 +263,22 @@ footer {
 }
 
 .cards{
-    grid-template-columns:1fr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
 }
 .card {
     overflow: hidden;
 }
-.forms{
-    padding:30px 20px;
-}
-
 form{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
 }
-.form-7{
-    grid-column:auto;
+.forms{
+    padding:10px 10px;
 }
+
 
 footer{
     padding:30px 20px;
@@ -312,7 +311,12 @@ iframe{
 .logo img{
     width:80px;
 }
-
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    flex-wrap: wrap;
+}
 .btn{
     width:100%;
     text-align:center;
