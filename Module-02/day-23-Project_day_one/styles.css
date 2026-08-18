@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: rgb(9, 134, 9);
+    --bg-color: rgb(252, 252, 244);
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f6f3f3c7;
+}
+.nav-bar {
+    height: 10vh;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: var(--bg-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    z-index: 100; 
+}
+
+#name {
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.search-container {
+    display: flex;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+
+/* Hero section  */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.filter {
+    background: #036a0b;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 7px;
+    min-width: 44px;
+    min-height: 35px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Simple Cart Container */
+.simple-cart {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.simple-cart h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    border-bottom: 1px dashed #eee;
+}
+.cart-item-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    border-bottom: 1px dashed #eee;
+}
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding-top: 0.75rem;
+    border-top: 1px solid #333;
+}
+.checkout {
+    background: #036a0b;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 7px;
+    min-width: 100%;
+    min-height: 35px;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container {
+    display: flex;
+}
+.menu {
+    flex: 3;
+}
+aside {
+    flex: 1;
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 2.5rem;
+    max-height: 500px;
+}
+.cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+}
+.card {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 300px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    text-align:left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .add-to-cart:hover, .checkout:hover, .filter:hover, .simple-cart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-image img {
+    width: 100%;
+    height: 150px;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+    border-radius: 16px;
+    background-color: #eee;
+}
+.card-body {
+    padding: 20px 24px 30px 24px;
+}
+.add-to-cart {
+    background: #036a0b;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 7px;
+    min-width: 100%;
+    min-height: 35px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-name li{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #eee;
+}
+
+footer {
+    height: 10vh;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 4px 8px 12px rgba(0,0,0,0.5);
+    background-color: rgb(249, 249, 249);
+    font-family: system-ui, -apple-system, sans-serif;
+    z-index: 100; 
+}
