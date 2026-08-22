@@ -107,4 +107,4 @@ Validation stops at the first failing field and displays its message in `#error_
 
 ## License
 
-Add your preferred license here (e.g. MIT).
+None.
