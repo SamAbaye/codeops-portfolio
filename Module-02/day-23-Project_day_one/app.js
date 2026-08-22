@@ -25,6 +25,7 @@ const form = document.getElementById("checkoutForm");
 const SERVICE_CHARGE_RATE = 0.1;
 const error_display = document.getElementById('error_display')
 const placeOrderBtn = document.getElementById("place_order");
+const removeAll = document.getElementById('remove')
 
 const state = {
 cart: [],
@@ -56,7 +57,7 @@ function renderMenu() {
     const displayed = state.dishes.filter((dish) =>
         dish.name.toLowerCase().includes(search),
     );
-
+     if(!displayed) sea.innerHTML = `There is no ${search}`
     cardsContainer.innerHTML = displayed
         .map(
         (dish) => `
@@ -88,16 +89,17 @@ function renderCart() {
             cart_items.innerHTML = `<li class="empty">Your cart is empty</li>`;
         } else {
             cart_items.innerHTML = state.cart
-            .map(
+              .map(
                 (item) => `
                     <li data-id="${item.id}">
                         <span>${item.name} x${item.qty}</span>
                         <strong>$${(item.price * item.qty).toFixed(2)}</strong>
-                        <button class="rm" aria-label="Remove ${item.name}">&times;</button>
+                        <button id="rm" aria-label="Remove ${item.name}"><i class="fa-solid fa-trash"></i></button>
+
                     </li>
                     `,
-            )
-            .join("");
+              )
+              .join("");
         }
 
         const subtotal = subTotal();
@@ -153,9 +155,14 @@ cardsContainer.addEventListener("click", (e) => {
         render();
 });
 
+// removeAll.addEventListener('click', () => {
+//     console.log('remove')
+//     localStorage.clear();       
+// })
+
 // removing and adding carts
 cart.addEventListener("click", (e) => {
-        if (!e.target.matches(".rm")) return;
+        if (!e.target.closest("#rm")) return;
         const id = Number(e.target.closest("li").dataset.id);
         state.cart = state.cart.filter((i) => i.id !== id);
 
@@ -207,7 +214,6 @@ form.addEventListener("submit", (e) => {
     }
  
     // all checks passed
-    console.log("Order valid:", fields);
     alert("Order placed successfully!");
     checkoutFormWrapper.style.display = "none";
     cart.style.display = ''
