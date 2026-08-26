@@ -1,0 +1,22 @@
+.dish-card {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 250px;
+    min-height: 300px;
+    background-color: #f1ecec;
+    border-radius: 16px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    text-align:left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image {
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+.text {
+    text-align:start;   
+    margin-top: 1rem;
+}

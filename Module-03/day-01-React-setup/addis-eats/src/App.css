@@ -1,0 +1,14 @@
+
+.main {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: 0.5fr 18fr 0.5fr;
+}
+
+@media (min-width: 768px){
+  .main {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-rows: 1fr 18fr 1fr;
+  }
+}

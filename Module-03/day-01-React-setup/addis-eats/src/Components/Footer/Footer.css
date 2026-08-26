@@ -1,0 +1,9 @@
+* {
+    text-align: center;
+}
+
+footer {
+    background-color: yellow;
+    display: grid;
+    height: 100%;
+}
