@@ -1,0 +1,48 @@
+.category-bar {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  
+  .chip {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .chip.active {
+    background: #2f7a4f;
+    color: white;
+    border-color: #2f7a4f;
+  }
+  
+  .dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .dish-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .dish-name {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .dish-price {
+    color: #b8860b;
+    margin: 4px 0;
+  }
+  
+  .error {
+    color: #c0392b;
+    font-size: 13px;
+  }
+  
