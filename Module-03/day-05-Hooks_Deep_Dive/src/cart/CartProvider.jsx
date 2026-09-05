@@ -1,5 +1,5 @@
 import React, { useReducer, useMemo } from "react";
-import CartContext from "../CartContext";
+import {CartContext }from "../CartContext";
 import {cartReducer, initialCartState} from "../cartReducer";
 
 export function CartProvider({ children }) {

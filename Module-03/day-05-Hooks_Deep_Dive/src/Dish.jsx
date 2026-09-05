@@ -1,7 +1,7 @@
     import PropTypes from "prop-types";
     import { useContext } from "react";
     import './Dish.css'
-    import CartContext from "./CartContext";
+    import {CartContext} from "./CartContext";
 
     const Dish = ({ id, name, price, spicy, category, image }) => {
     const { items, dispatch } = useContext(CartContext);

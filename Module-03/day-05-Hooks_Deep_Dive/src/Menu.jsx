@@ -3,7 +3,7 @@ import CategoryBar from "./CatagoryBar";
 import Dish from "./Dish";
 import './Menu.css'
 import { useFetch } from "./hooks/useFetch";
-import CartContext from "./CartContext";
+import {CartContext} from "./CartContext";
 
 function Menu() {
     const [category, setCategory] = useState("All");

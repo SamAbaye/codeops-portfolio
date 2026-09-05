@@ -1,6 +1,6 @@
 // src/cart/CheckoutPanel.jsx
 import { useContext, useMemo } from "react";
-import CartContext  from "../CartContext";
+import {CartContext}  from "../CartContext";
 
 function CheckoutPanel() {
   const { items, dispatch } = useContext(CartContext);

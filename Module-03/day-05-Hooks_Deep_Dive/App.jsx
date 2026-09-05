@@ -1,12 +1,11 @@
-import React from "react";
-import { useState, useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { CartContext } from "./src/CartContext";
 import Menu from "./src/Menu";
 import CartProvider from "./src/cart/CartProvider";
 import CheckoutPanel from "./src/cart/CheckoutPanel";
-import './index.css'
+import "./index.css";
 
-function App() {
+function AppContent() {
   const { items } = useContext(CartContext);
 
   const { totalItems, totalPrice } = useMemo(() => {
@@ -18,18 +17,24 @@ function App() {
       { totalItems: 0, totalPrice: 0 },
     );
   }, [items]);
+
   return (
     <div className="menu-container">
       <h1>Addis Eats Menu</h1>
-
-      <CartProvider>
-        <div className="cart-summary">
-          🛒 {totalItems} items — {totalPrice} ETB
-        </div>
-        <Menu />
-        <CheckoutPanel />
-      </CartProvider>
+      <div className="cart-summary">
+        🛒 {totalItems} items — {totalPrice} ETB
+      </div>
+      <Menu />
+      <CheckoutPanel />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
   );
 }
 
