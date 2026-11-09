@@ -1,0 +1,56 @@
+header {
+    height: 100%;
+    background-color: blanchedalmond;
+}
+
+.nav {
+    display: grid;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+input {
+    width: 18rem;
+    height: 2rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px){
+    header {
+        height: 100%;
+        background-color: blanchedalmond;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav ul li {
+        list-style: none;
+    }
+    
+    .logo ul{
+        display: flex;
+        gap: 15px;
+    }
+    
+    input {
+        width: 18rem;
+        height: 2rem;
+        margin: 2rem;
+        border-radius: 5px;
+    }
+}

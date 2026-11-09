@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+}
+form {
+    display: grid;
+    gap: 16px;
+}
+form label {
+    font-size: large;
+}
+form input {
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 1px;
+    min-width: 200px;
+}
+
+button {
+    padding: 5px 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    font-weight: 600;
+}

@@ -1,0 +1,19 @@
+
+.products {
+    display: grid;
+    background-color: blue;
+    grid-template-columns: fr;
+    gap: 16px;
+}
+
+
+@media (min-width: 768px) {
+    .products {
+        display: grid;
+        background-color: blue;
+        grid-template-columns: repeat(4, minmax(300px, 2fr));
+        gap: 16px;
+    }
+}
+
+

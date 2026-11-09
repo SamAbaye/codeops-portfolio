@@ -1,0 +1,60 @@
+* {
+    padding: 0%;
+    margin: 0% ;
+    box-sizing: border-box;
+}
+:root {
+    --bg: #efca13;
+    --color: white;
+    --size: 24px;
+
+}
+body {
+    font-family: "Noto Serif", serif;
+}
+img {
+    width: 22em;
+    height: 12em;
+    margin: 1em auto;
+    display: block;
+}
+
+.container {
+    text-align: center;
+    width: 400px;
+    height: 550px;
+    border: black, solid, 3px;
+    background-color: var(--bg);
+    margin: 50px auto;
+}
+.container h3 {
+    text-transform: uppercase;
+}
+h3:hover {
+    font-size:var(--size);
+    color: var(--color);
+    text-decoration:double;
+}
+.description {
+    padding: 1em;
+}
+.description li{
+    list-style-type: none;
+    padding: 0.1em;
+}
+.description p{
+    padding: 1em;
+}
+ul {
+    padding: 1em;
+} 
+li:nth-child(even){
+    background-color: var(--color);
+}
+li:nth-child(odd){
+    background-color: rgb(55, 52, 52);
+    color: var(--color);
+}
+.price::before { 
+    content: "ETB "; 
+}

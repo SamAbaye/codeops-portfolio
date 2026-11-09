@@ -1,0 +1,83 @@
+.dish-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #fff;
+    transition: box-shadow 0.15s ease;
+}
+
+.dish-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dish-item .image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f2f2f2;
+}
+
+.dish-item .image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.categoryWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.categoryWrapper span {
+    font-size: 0.75rem;
+    color: #b8860b;
+}
+
+.dish-item > div:nth-of-type(2) {
+    font-weight: bold;
+    margin: 0;
+}
+
+.dish-item > div:nth-of-type(3) {
+    color: #b8860b;
+    margin: 0 0 4px;
+}
+
+.dish-item button {
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+}
+
+.dish-item button:hover:not(:disabled) {
+    background: #f2f2f2;
+}
+
+.dish-item button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.dish-item span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 600;
+}
