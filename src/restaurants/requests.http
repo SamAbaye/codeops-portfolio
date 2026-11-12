@@ -1,0 +1,14 @@
+@host = http://localhost:3000/api
+ 
+### list every restaurant
+GET {{host}}/restaurants
+ 
+### filter by delivery area
+GET {{host}}/restaurants?area=Bole
+ 
+### one restaurant
+GET {{host}}/restaurants/1
+ 
+### a restaurant that does not exist
+GET {{host}}/restaurants/99
+ 
