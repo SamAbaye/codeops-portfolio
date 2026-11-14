@@ -1,0 +1,52 @@
+{
+    "Order-1": { 
+        "id": "1",
+        "customerName": "Almaz",
+        "area": "Bole",
+        "status": "PENDING",
+        "dishList": {
+            "name": "Doro",
+            "priceSantim": 2500
+        },
+        "teleBirrPhone": "0912718642",
+        "totalSantim": 3000
+    },
+    "Order-2": {
+        "id": "2",
+        "customerName": "Alemu",
+        "area": "Kazanchis",
+        "status": "PENDING",
+        "dishList": {
+            "name": "Alecha",
+            "priceSantim": 1500
+        },
+        "teleBirrPhone": "0913718642",
+        "totalSantim": 2000 
+    },
+    "Order-3": {
+        "id": "3",
+        "customerName": "Samson",
+        "area": "Kazanchis",
+        "status": "ON_THE_WAY",
+        "dishList": {
+            "name": "Gomen",
+            "priceSantim": 1300
+        },
+        "teleBirrPhone": "0911718652",
+        "totalSantim": 1800
+    },
+    "Order-4": {
+        "id": "4",
+        "customerName": "Teshome",
+        "area": "Bole",
+        "status": "DELIVERED",
+        "dishList": {
+            "name": "Doro",
+            "priceSantim": 2500
+        },
+        "teleBirrPhone": "0912718642",
+        "totalSantim": 3000
+    }
+
+
+}
