@@ -11,7 +11,6 @@ function Menu() {
     const [category, setCategory] = useState("All");
     const [orderTotal, setOrderTotal] = useState(0);
 
-    // Derived, not stored — recalculated whenever category changes
     const visibleDishes =
         category === "All" ? menu : menu.filter((dish) => dish.category === category);
 

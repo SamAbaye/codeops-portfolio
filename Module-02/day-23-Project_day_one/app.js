@@ -57,7 +57,7 @@ function renderMenu() {
     const displayed = state.dishes.filter((dish) =>
         dish.name.toLowerCase().includes(search),
     );
-     if(!displayed) sea.innerHTML = `There is no ${search}`
+    if(!displayed) sea.innerHTML = `There is no ${search}`
     cardsContainer.innerHTML = displayed
         .map(
         (dish) => `

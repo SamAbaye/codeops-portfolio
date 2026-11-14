@@ -1,7 +1,7 @@
 .dish-card {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-width: 250px;
-    min-height: 300px;
+    min-height: 400px;
     background-color: #f1ecec;
     border-radius: 16px;
     box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
@@ -16,7 +16,26 @@
 
 }
 
-.text {
-    text-align:start;   
+.info span{  
+    display: grid;
+    text-align:left; 
     margin-top: 1rem;
+    padding: 0.5rem;
+}
+.count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count h3{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem;
+    color: red;
+    font-weight: 700;
+    border: 1px solid black;
 }

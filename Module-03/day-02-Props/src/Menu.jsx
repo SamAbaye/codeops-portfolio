@@ -10,11 +10,11 @@ import '../index.css'
 function Menu({ menu = [], category }) {
 
     const shown =
-      !category || category === "All"
+        !category || category === "All"
         ? menu
         : menu.filter(
             (d) => d.category.toLowerCase() === category.toLowerCase(),
-          );
+        );
     console.log(shown)
     if (shown.length === 0)
     return <p>No {category} dishes.</p>;

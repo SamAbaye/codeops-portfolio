@@ -2,13 +2,12 @@
         display: none;
 }
 
-
-
 @media (min-width: 768px){
         .sidebar {
                 display: flex;
+                justify-content: center;
                 width: 20%;
-                background-color: rgb(188, 231, 19);
+                background-color: green;
         }
 }
 

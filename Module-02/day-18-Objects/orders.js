@@ -7,3 +7,4 @@ console.log(receipt(220, 180, 120));
 // Dawit orders Firfir (140) and Buna (60)
 console.log(receipt(140, 60));
 
+console.log(localStorage.setItem("name", "samson"))

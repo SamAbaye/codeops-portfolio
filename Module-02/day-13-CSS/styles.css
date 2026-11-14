@@ -7,7 +7,6 @@
     --bg: #efca13;
     --color: white;
     --size: 24px;
-
 }
 body {
     font-family: "Noto Serif", serif;
@@ -30,7 +29,7 @@ img {
 .container h3 {
     text-transform: uppercase;
 }
-h3:hover {
+.title:hover {
     font-size:var(--size);
     color: var(--color);
     text-decoration:double;

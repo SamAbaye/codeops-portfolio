@@ -36,7 +36,7 @@ print(binary_search([1,2,3,4,5,6,7,8,9], 10))
 
 #Implement merge_sort(items) and its merge helper
 
-def merge_sort(items):
+def merge_sort1(items):
     if len(items) <= 1:
         return items
     mid = int(len(items) / 2)
@@ -70,7 +70,7 @@ def merge(left, right):
 
     return sorted_array
 
-print(merge_sort([1,12,31,4,11,34, 5,6,7]))
+print(merge_sort1([1,12,31,4,11,34, 5,6,7]))
 
 #Given a list of (name, balance) tuples, sort it by balance descending using sorted(key=...). 
 accounts = [
@@ -102,3 +102,11 @@ def has_pairs(nums, target):
         hi -= 1
    return -1
 print(has_pairs(nums, 350))
+
+def merge_sort(item):
+    if len(item) <= 1:
+        return item
+    mid = len(item) / 2
+    left = merge_sort(item[:mid])
+    right = merge_sort(item[mid:])
+    return merge(left, right)

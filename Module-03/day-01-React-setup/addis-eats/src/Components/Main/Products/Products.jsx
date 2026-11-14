@@ -211,7 +211,7 @@ function Products() {
       <>
         <div className="products">
           {menu.map((dish) => 
-            <Dish name={dish.name} price={dish.price}  img={dish.img}/>
+            <Dish key={dish.id} name={dish.name} price={dish.price}/>
           )}
           
         </div>

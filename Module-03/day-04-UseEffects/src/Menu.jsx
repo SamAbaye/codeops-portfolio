@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import CategoryBar from "./CatagoryBar";
 import DishList from "./DishList";
-import { loadDishes } from "./api";
+import { loadDishes } from "./Api";
 
 function Menu() {
     const [allDishes, setAllDishes] = useState([]);
@@ -10,7 +10,7 @@ function Menu() {
     const [category, setCategory] = useState("All");
     const searchRef = useRef(null);
 
-   
+
     useEffect(() => {
         const ctrl = new AbortController();
 

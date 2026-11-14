@@ -22,6 +22,5 @@ switch (method) {
         total += total * 0.01
 }
 
-
 console.log(`The bill per person is ${per_person}, The total amount is ${total}`)
     
